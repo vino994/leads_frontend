@@ -16,10 +16,10 @@ function Register() {
 
     try {
       await api.post("/auth/register", { name, email, password });
-     toast.success("Success message");
+     toast.success("Account created successfully!ß");
       navigate("/");
     } catch (error) {
-   toast.error("Error message");
+   toast.error(error.response?.data?.message || "Registration failedß");
     }
 
     setLoading(false);
